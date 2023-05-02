@@ -1,0 +1,175 @@
+.default-section {
+    width: 90%;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+h2.header-with-img {
+    position: relative;
+}
+h2.header-with-img img {
+    position: absolute;
+    bottom: -50px;
+    left: 38%;
+}
+.services-card-wrapper {
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(4, 1fr);
+    grid-row-gap: 20px;
+    row-gap: 20px;
+}
+.services-card {
+    position: relative;
+    height: 200px;
+    border-radius: 2px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.services-card h4,
+.services-card  p {
+    color: white;
+}
+.services-card  p {
+    font-size: 14px;
+}
+.blue-bg {
+    background-color:  rgb(19, 74, 99);
+    padding: 4px;
+    position: absolute;
+    width: 97%;
+    bottom: -21px;
+}
+.services-card-hover {
+    transition: all 0.4s;
+    position: absolute;
+    top: 0;
+    height: 180px;
+    background-color:  rgba(19, 74, 99, 0.69);
+    padding: 10px;
+    text-align: center;
+}
+.services-card.bg-img-1 {
+    background-image: url('../../assets/img_01.jpg');
+}
+.services-card.bg-img-2 {
+    background-image: url('../../assets/img_02.jpg');
+}
+.services-card.bg-img-3 {
+    background-image: url('../../assets/img_03.jpg');
+}
+.services-card.bg-img-4 {
+    background-image: url('../../assets/img_04.jpg');
+}
+.services-card.bg-img-5 {
+    background-image: url('../../assets/img_05.jpg');
+}
+.services-card.bg-img-6 {
+    background-image: url('../../assets/img_06.jpg');
+}
+.services-card.bg-img-7 {
+    background-image: url('../../assets/img_07.jpg');
+}
+.services-card.bg-img-8 {
+    background-image: url('../../assets/img_01.jpg');
+}
+.light-grey {
+    background-color: #EAEAEA;
+}
+.default-section h2,
+.default-section h3,
+.default-section h4 {
+    text-align: center;
+}
+.mission-wrapper img.mission-icon {
+    width: 45px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.mission-banner-container {
+    text-align: center;
+    position: relative;
+}
+.mission-banner-container img {
+    width: 48%;
+    margin: auto;
+}
+.mission-banner-container .top-left {
+    position: absolute;
+    left: 160px;
+    top: 50px;
+}
+.mission-banner-container .bottom-left {
+    position: absolute;
+    bottom: 50px;
+    left: 160px;
+}
+.mission-banner-container .top-right {
+    position: absolute;
+    right: 140px;
+    top: 50px;
+}
+.mission-banner-container .bottom-right {
+    position: absolute;
+    bottom: 50px;
+    right: 140px;
+}
+.tracking-form {
+    border: 1px solid #000;
+    padding: 10px;
+    width: 60%;
+    margin: auto;
+}
+.tracking-form input {
+    height: 32px;
+    font-size: 18px;
+    width: 400px;
+}
+.contact-form {
+    background-color: #EAEAEA;
+    padding: 20px;
+}
+.contact-form input {
+    height: 40px;
+    border: 2px solid black;
+    width: 100%;
+    padding-left: 10px;
+}
+.bill-info-main-header {
+    font-size: 25px;
+    border-bottom: 1px solid black;
+    text-align: left !important;
+    padding-bottom: 7px;
+}
+
+.bill-info-two-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 50px;
+}
+.shipment-status {
+    width: 100%;
+    background-color: gray;
+    color: white;
+    font-size: 30px;
+    font-weight: 400;
+    padding: 10px 0;
+    margin-top: 50px;
+
+}
+.bill-info-three-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 80px;
+}
+.bill-info-text {
+    font-size: 20px;
+    text-transform: capitalize;
+    margin: 5px 0;
+}
+.bill-info-heading {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 15px;
+}
+

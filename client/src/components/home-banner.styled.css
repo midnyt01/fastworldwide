@@ -1,0 +1,15 @@
+.hero-banner-container {
+    width: 100%;
+    margin: auto;
+    height: 550px;
+}
+.slider-container {
+    width: 100%;
+    position: absolute;
+    top: -60px;
+    z-index: -999;
+}
+.hero-img-wrapper img {
+    width: 100% ;
+    height:auto;
+}

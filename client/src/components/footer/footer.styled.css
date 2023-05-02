@@ -1,0 +1,25 @@
+.dark-footer {
+    background-color: black;
+}
+.footer {
+    margin: auto;
+    display: flex;
+    padding: 40px;
+}
+.footer h3 {
+    font-weight: 200;
+    font-size: 16px;
+}
+.footer p {
+    font-size: 14px;
+}
+.footer p,
+.footer a,
+.footer h3,
+.footer h4 {
+    color: #fff;
+}
+.footer ul {
+    list-style: none;
+    padding-left: 0;
+}

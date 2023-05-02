@@ -1,0 +1,34 @@
+  .topbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    background-color: transparent;
+    padding: 10px 100px 10px 100px;
+    z-index: 9999 !important;
+  }
+  .announcement-bar {
+    background-color: #003D59E6;
+    padding: 6px;
+    color: white;
+    text-align: center;
+  }
+  .announcement-bar p{
+    margin: 0;
+    font-size: 14px;
+  }
+  .topbar-container p {
+      margin: 0;
+    }
+  .topbar-container img {
+    width: 160px;
+  }
+  .topbar-container ul {
+    list-style: none;
+    display: flex;
+  }
+  .topbar-container ul li a {
+    color: white;
+    padding: 0 8px 0 8px;
+  }
+  
