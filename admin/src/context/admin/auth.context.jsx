@@ -57,12 +57,12 @@ export const NavList = [
       Link : '/enquiries',
       Icon: 'fa-phone'
     },
-    // {
-    //     Id: 11,
-    //     Title: 'Create Account',
-    //     Link : '/create-account',
-    //     Icon: 'fa-square-plus'
-    // },
+    {
+        Id: 11,
+        Title: 'Create Account',
+        Link : '/create-account',
+        Icon: 'fa-square-plus'
+    },
     {
       Id: 12,
       Title: 'Site Settings',

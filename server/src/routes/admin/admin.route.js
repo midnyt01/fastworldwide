@@ -1,10 +1,14 @@
 const express = require("express");
 
 const {
-  httpCreateShipment,
+  httpCreateShipment, httpCreateAdminAccount, httpLoginAdmin,
 } = require("./admin.controller");
 
 const adminRouter = express.Router();
+
+
+adminRouter.post("/createadmin", httpCreateAdminAccount);
+adminRouter.post("/login", httpLoginAdmin);
 
 adminRouter.post("/createshipment", httpCreateShipment)
 

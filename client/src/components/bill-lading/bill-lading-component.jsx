@@ -57,7 +57,7 @@ const BillladingSection = () => {
           </form>
         </div>
         <h2 className="mt-4">
-          Navistar Logistics Provides Dedicated Service in Freight Forwarding
+          First worldwide International FZE Provides Dedicated Service in Freight Forwarding
         </h2>
         <Link to="/" className="btn cta-btn-bg">
           Request Quote

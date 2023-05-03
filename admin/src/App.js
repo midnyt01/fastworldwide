@@ -13,6 +13,8 @@ import { fas } from "@fortawesome/free-solid-svg-icons";
 import SFLogo from "./assets/SF-logo.png";
 import { ProtectedRoute } from "./context/admin/protected-route";
 import AddShipment from "./routes/admin/add-shipment/add-shipment";
+import Adminlogin from "./routes/admin/admin-login";
+import AdminCreateAccount from "./routes/admin/create-admin-account";
 // import SellerCreateOrder from "./routes/seller/seller-create-order/seller-create-order.component";
 
 library.add(fas);
@@ -22,7 +24,7 @@ function App() {
     <Routes>
       {/* Common */}
       <Route path="/mainlogo" element={<SFLogo />} />
-
+      <Route path="/admin-login" element={<Adminlogin />} />
       {/* Admin Panel */}
       <Route
         path="/"
@@ -37,6 +39,14 @@ function App() {
         element={
           <ProtectedRoute>
             <AddShipment />
+          </ProtectedRoute>
+        }
+      />
+            <Route
+        path="/create-account"
+        element={
+          <ProtectedRoute>
+            <AdminCreateAccount />
           </ProtectedRoute>
         }
       />

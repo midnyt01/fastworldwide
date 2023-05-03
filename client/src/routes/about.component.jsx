@@ -17,7 +17,7 @@ const AboutPage = () => {
             <img src={HeaderImg} alt='' />
         </h2>
 
-        <p>Navistar Logistics is a group company and India’s leading logistics service providers in the field of licensed Customs Brokerage / Customs House Agents, International Freight Forwarding and land transportation having own fleet of 20’ and 40’ trailers. Established in the year 2021, we have our own customs broker license in the name of Navistar Logistics Limited</p>
+        <p>First worldwide International FZE is a group company and India’s leading logistics service providers in the field of licensed Customs Brokerage / Customs House Agents, International Freight Forwarding and land transportation having own fleet of 20’ and 40’ trailers. Established in the year 2021, we have our own customs broker license in the name of First worldwide International FZE Limited</p>
 
 
         <p>We are strategically located in Hong Kong with regional branch offices across the country and abroad to serve our clients. We provide array of services like air / sea import & export customs clearance, air / sea import & export freight forwarding, transportation, sourcing / imports from china, warehousing, liasioning with allied government departments, foreign trade consultancy etc.</p>
@@ -28,10 +28,10 @@ const AboutPage = () => {
         <p>We reciprocate through our work entirely with a progressive mindset, “YOU TRUST US, WE CARE”.</p>
 
         <h3>Our Mission</h3>
-        Navistar Logistics mission remains to “Deliver Service Excellence” and become the world’s preferred Clearing, Forwarding, Transportation and Sourcing company by applying insight, quality and innovation.
+        First worldwide International FZE mission remains to “Deliver Service Excellence” and become the world’s preferred Clearing, Forwarding, Transportation and Sourcing company by applying insight, quality and innovation.
 
         <h3>Our Vision</h3>
-        <p></p>To establish Navistar Logistics as the most leading Worldwide Logistics & Supply Chain Management company as a trusted partner to all our clients.
+        <p></p>To establish First worldwide International FZE as the most leading Worldwide Logistics & Supply Chain Management company as a trusted partner to all our clients.
 
         <h3>Core Values</h3>
         <p>Unclear Logistics has always been values driven. Our shared values guide our actions that help us make a difference. These values continue to direct the growth and business of our company. Our core values are:</p>

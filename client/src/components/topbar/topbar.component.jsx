@@ -1,11 +1,22 @@
-// import {useState} from "react";
+import {useState} from "react";
 import { Link } from 'react-router-dom';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import { useContext } from "react";
-import MainLogo from '../../assets/navi_logo.png'
+import Sidebar from '../sidebar.component';
+import MainLogo from '../../assets/navi_logo.png';
 import './topbar.styles.css'
 
 const Topbar = () => {
+
+  const [ isSidenavOpen, setIsSidenavOpen ] = useState(false)
+  const sidebarToggle = () => {
+    if (isSidenavOpen === false) {
+      setIsSidenavOpen(true)
+    }
+    else {
+      setIsSidenavOpen(false)
+    }
+  }
 
   return (
     <div>
@@ -15,7 +26,11 @@ const Topbar = () => {
         </div>
         <div className="topbar-container">
           <img src={MainLogo} alt="FWW Logo" />
-          <ul>
+          { isSidenavOpen && <Sidebar sidebarToggle={sidebarToggle} /> }
+            <span className='cta-btn-text f-size-1 sidebar-icon' onClick={sidebarToggle}>
+              <FontAwesomeIcon icon="fa-solid fa-bars" />
+            </span>
+          <ul className="topbar-links">
             <li>
               <Link to='/' >Home</Link>
             </li>
