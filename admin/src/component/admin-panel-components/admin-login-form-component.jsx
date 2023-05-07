@@ -1,6 +1,6 @@
 import React from 'react';  
 import './admin-login-form.css'
-import SFLogo from "../../assets/SF-logo.png"
+import SFLogo from "../../assets/icon.png"
 import { useState } from 'react';
 import { httpLoginAdmin } from '../../utils/nodejs/admin';
 import { Link, useNavigate } from 'react-router-dom';

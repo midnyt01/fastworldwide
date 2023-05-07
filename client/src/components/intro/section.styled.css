@@ -133,7 +133,7 @@ ul.mission-list li svg:not(:host).svg-inline--fa {
 .tracking-form input {
     height: 32px;
     font-size: 18px;
-    width: 400px;
+    width: 50%;
 }
 .contact-form {
     background-color: #EAEAEA;
@@ -218,5 +218,14 @@ ul.mission-list li svg:not(:host).svg-inline--fa {
     .mission-banner-container .bottom-right {
         bottom: 0;
         right: 0;
+    }
+    .tracking-form {
+        width: 80%;
+    }
+    .tracking-form input {
+        width: 60%;
+    }
+    .contact-form {
+        width: 80%;
     }
 }

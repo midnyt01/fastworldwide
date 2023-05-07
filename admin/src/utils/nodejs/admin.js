@@ -1,4 +1,4 @@
-const API = 'http://localhost:8000/admin';
+const API = 'https://api.fwwlogistic.com/admin';
 
 
 async function httpCreateAdmin (adminCred) {

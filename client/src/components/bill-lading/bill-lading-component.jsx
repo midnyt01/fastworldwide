@@ -6,7 +6,7 @@ import BillInfo from "./bill-info";
 
 async function getShipmentInfo(details) {
   const response = await fetch(
-    `http://localhost:8000/customer/get-shipment-info`,
+    `https://api.fwwlogistic.com/customer/get-shipment-info`,
     {
       method: "post",
       headers: {
