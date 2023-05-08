@@ -48,7 +48,7 @@ const BillladingSection = () => {
           <hr />
           <form>
             <input
-              type="number"
+              type="text"
               placeholder="Enter tracking number"
               onChange={handleOnChangeConsignmentNo}
             ></input>
