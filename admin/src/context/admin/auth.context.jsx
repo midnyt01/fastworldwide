@@ -23,12 +23,12 @@ export const NavList = [
       Link : '/add-shipment',
       Icon: 'fa-laptop-code'
     },
-    // {
-    //   Id: 5,
-    //   Title: 'Case Study Editor',
-    //   Link : '/create-case-study',
-    //   Icon: 'fa-laptop-code'
-    // },
+    {
+      Id: 5,
+      Title: 'All Shipments',
+      Link : '/all-shipments',
+      Icon: 'fa-laptop-code'
+    },
     {
       Id: 6,
       Title: 'Pages'

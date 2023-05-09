@@ -1,7 +1,10 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import styled from "styled-components";
 import { EditorContext } from "../../context/admin/editor.context";
-import { httpCreateNewShipment } from "../../utils/nodejs/admin";
+import { httpCreateNewShipment, httpUpdateShipment } from "../../utils/nodejs/admin";
+import { useNavigate, useParams } from "react-router-dom";
+import { ShipmentContext } from "../../context/admin/shipments.context";
+import Topbar from "./admin-topbar/topbar.component";
 const Wrapper = styled.div`
   width: 90%;
   margin: auto;
@@ -112,9 +115,18 @@ const SHIPPER_INFO = {
 
 
 
-const AddShipmentBody = () => {
+const EditShipmentComponent = () => {
 
-    const {    
+    const navigate = useNavigate();
+    
+    const { Id } = useParams();
+    console.log('hello world')
+
+    const {
+        allShipments,
+        setAllShipment,
+        currentShipment,
+        updateCurrentShipment,
         consignmentNo,
         setConsignmentNo,
         shipperInfo,
@@ -122,7 +134,17 @@ const AddShipmentBody = () => {
         receiverInfo,
         setReceiverInfo,
         shipmentInfo,
-        setShipmentInfo} = useContext(EditorContext)
+        setShipmentInfo} = useContext(ShipmentContext)
+
+    useEffect(() => {
+        updateCurrentShipment(Id)
+        console.log({Id})
+    }, [Id])
+
+    
+
+
+
 
         const handleOnConsignmentNoChange = (e) => {
             setConsignmentNo(e.target.value)
@@ -142,25 +164,32 @@ const AddShipmentBody = () => {
             const {name, value} = e.target;
             setShipmentInfo({...shipmentInfo, [name]: value})
         }
-        const handlePublish = async () => {
+        const handleUpdate = async () => {
             console.log({consignmentNo ,...shipperInfo, ...receiverInfo, ...shipmentInfo})
-            const response = await httpCreateNewShipment({ConsignmentNo: consignmentNo, ...shipperInfo, ...receiverInfo, ...shipmentInfo} )
+            const response = await httpUpdateShipment({ShipmentId: currentShipment, ConsignmentNo: consignmentNo, ...shipperInfo, ...receiverInfo, ...shipmentInfo} )
             if (response.success) {
                 console.log('shipment added')
-                setConsignmentNo("");
-                setShipperInfo(SHIPPER_INFO)
-                setReceiverInfo(RECEIVER_INFO)
-                setShipmentInfo(SHIPMENT_INFO)
+                let newShipments = allShipments
+                for (let i = 0; i< newShipments.length; i++) {
+                    if (newShipments[i].ShipmentId == currentShipment) {
+                        newShipments[i].ConsignmentNo = consignmentNo
+                        setAllShipment([...newShipments])
+                        break;
+                    }
+                }
+                navigate('/all-shipments')
             } else {
                 console.log('error', response)
             }
         }
 
   return (
+        <>
+        <Topbar />
     <Wrapper>
       <Header>
         <PageTitle>Create New Shipment</PageTitle>
-        <Action onClick={handlePublish} >Create Shipment</Action>
+        <Action onClick={handleUpdate} >Update Shipment</Action>
       </Header>
       <TwoGridcontainer>
         {/* SHIPPER INFO */}
@@ -440,7 +469,8 @@ const AddShipmentBody = () => {
 
       </ThreeGridcontainer>
     </Wrapper>
+        </>
   );
 };
 
-export default AddShipmentBody;
+export default EditShipmentComponent;

@@ -12,6 +12,7 @@ const BillInfo = ({ shipmentInfo }) => {
     ReceiverName,
     ReceiverAddress,
     ReceiverPhonenumber,
+    ReceiverEmail,
     Origin,
     Package,
     Status,
@@ -50,7 +51,7 @@ const BillInfo = ({ shipmentInfo }) => {
           <div className="bill-info-text" >{ReceiverName}</div>
           <div className="bill-info-text" >{ReceiverAddress}</div>
           <div className="bill-info-text" >{ReceiverPhonenumber}</div>
-          <div className="bill-info-text" >{ShipperEmail}</div>
+          <div className="bill-info-text" >{ReceiverEmail}</div>
         </div>
       </div>
       <h2 className="shipment-status">Shipment Status</h2>

@@ -26,20 +26,20 @@ export const ProtectedRoute = ({children}) => {
     },[isAdminLogin])
 
 
-    // if (localStorage.getItem("admin")) {
-    //   return (
-    //     <Container left={isSidebarOpen ? '280px': '0px'} >
-    //         {children}
-    //     </Container>
-    // )
+    if (localStorage.getItem("admin")) {
+      return (
+        <Container left={isSidebarOpen ? '280px': '0px'} >
+            {children}
+        </Container>
+    )
         
-    // }
-    // return <Navigate to="/admin-login" />
-    return (
-      <Container left={isSidebarOpen ? '280px': '0px'} >
-          {children}
-      </Container>
-  )
+    }
+    return <Navigate to="/admin-login" />
+  //   return (
+  //     <Container left={isSidebarOpen ? '280px': '0px'} >
+  //         {children}
+  //     </Container>
+  // )
 
     //Temp Code
 

@@ -3,6 +3,10 @@ const {
   createAdminAccount,
   loginInAdmin,
   createShipment,
+  getAllShipment,
+  deleteShipment,
+  getCurrentShipmentInfo,
+  updateShipment,
 } = require("../../models/admin.model");
 
 async function httpCreateAdminAccount(req, res) {
@@ -36,9 +40,56 @@ async function httpCreateShipment(req, res) {
   });
 }
 
+async function httpGetAllShipment(req, res) {
+  console.log(req.body)
+  await getAllShipment(function (err, data) {
+    if (err) {
+      res.status(400).json(err);
+    } else {
+      res.json(data);
+    }
+  });
+}
+async function httpDeleteShipment(req, res) {
+  let ShipmentId = req.body.ShipmentId
+  await deleteShipment(ShipmentId, function (err, data) {
+    if (err) {
+      res.status(400).json(err);
+    } else {
+      res.json(data);
+    }
+  });
+}
+
+async function httpGetCurrentShipmentInfo(req, res) {
+  let ShipmentId = req.body.ShipmentId
+  await getCurrentShipmentInfo(ShipmentId, function (err, data) {
+    if (err) {
+      res.status(400).json(err);
+    } else {
+      res.json(data);
+    }
+  });
+}
+
+async function httpUpdateCurrentShipment (req, res) {
+  let details = req.body;
+  await updateShipment(details, function(err, data) {
+    if (err) {
+      res.status(400).json(err);
+    } else {
+      res.status(200).json(data)
+    }
+  })
+}
+
 
 module.exports = {
   httpCreateAdminAccount,
   httpLoginAdmin,
-  httpCreateShipment
+  httpCreateShipment,
+  httpGetAllShipment,
+  httpDeleteShipment,
+  httpGetCurrentShipmentInfo,
+  httpUpdateCurrentShipment,
 };

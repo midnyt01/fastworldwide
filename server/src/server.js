@@ -4,7 +4,7 @@ const app = require('./app')
 const { getSellerId } = require('./helper-function/helper-functions')
 const {mysqlConnect} = require('./services/mysql')
 
-const PORT = 8000
+const PORT = 8004
 
 
 const server = http.createServer(app)

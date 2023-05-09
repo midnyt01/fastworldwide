@@ -85,23 +85,62 @@ async function loginInAdmin(adminCreds, callback) {
 }
 
 async function createShipment (shipmentDetails, callback) {
-  const {ConsignmentNo} = shipmentDetails
-  delete shipmentDetails.ConsignmentNo;
-  let sql = 'INSERT INTO shipment_info SET ?';
+  let sql = 'INSERT INTO shipment SET ?';
   db.query(sql, shipmentDetails, function(err, result) {
     if (err) {
       return callback(err, null)
     } else {
-      let ShipmentId = result.insertId;
-      let sql = 'INSERT INTO consignment SET ?';
-      db.query(sql, {ShipmentId, ConsignmentNo}, function(err, result) {
-        if (err) {
-          callback(err, null)
-        } else {
-          return callback(null, {
-            success: true
-          })
-        }
+      return callback(null, {
+        success: true
+      })
+    }
+  })
+}
+
+async function getAllShipment(callback) {
+  let sql = `SELECT ConsignmentNo, ShipmentId FROM shipment WHERE IsDeleted = ${0}`;
+  db.query(sql, function(err, result) {
+    if (err) {
+      callback(err, null)
+    } else {
+      callback(null, result)
+    }
+  })
+}
+
+async function deleteShipment(ShipmentId, callback) {
+  let sql = `UPDATE shipment SET IsDeleted = ${1} WHERE ShipmentId = ${ShipmentId}`;
+  db.query(sql, function(err, result) {
+    if (err) {
+      callback(err, null)
+    } else {
+      callback(null, {
+        success: true
+      })
+    }
+  })
+}
+
+async function getCurrentShipmentInfo(ShipmentId, callback) {
+  let sql = `SELECT * FROM shipment WHERE (ShipmentId = ${ShipmentId} AND IsDeleted = ${0})`;
+  db.query(sql, function(err, result) {
+    if (err) {
+      callback(err, null)
+    } else {
+      callback(null, result[0])
+    }
+  })
+}
+
+async function updateShipment(details, callback) {
+  const {ShipmentId} = details;
+  let sql = `UPDATE shipment SET ? WHERE ShipmentId = ${ShipmentId}`;
+  db.query(sql, details, function(err, result) {
+    if (err) {
+      callback(err, null)
+    } else {
+      callback(null, {
+        success: true
       })
     }
   })
@@ -111,5 +150,9 @@ async function createShipment (shipmentDetails, callback) {
 module.exports = {
   createAdminAccount,
   loginInAdmin,
-  createShipment
+  createShipment,
+  getAllShipment,
+  deleteShipment,
+  getCurrentShipmentInfo,
+  updateShipment
 };

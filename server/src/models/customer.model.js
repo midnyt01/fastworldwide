@@ -3,9 +3,7 @@ const { db } = require("../services/mysql");
 
 
 async function getShipmentInfo (consignmentNo, callback) {
-  let sql = `SELECT * FROM consignment 
-  JOIN shipment_info ON consignment.ShipmentId = shipment_info.ShipmentId 
-  WHERE ConsignmentNo = ${consignmentNo} `
+  let sql = `SELECT * FROM shipment WHERE (ConsignmentNo = '${consignmentNo}' AND IsDeleted = ${0})`
   db.query(sql, function(err, result) {
     if (err) {
       callback(err, null)

@@ -15,6 +15,8 @@ import { ProtectedRoute } from "./context/admin/protected-route";
 import AddShipment from "./routes/admin/add-shipment/add-shipment";
 import Adminlogin from "./routes/admin/admin-login";
 import AdminCreateAccount from "./routes/admin/create-admin-account";
+import AllShipments from "./routes/admin/all-shipments";
+import EditShipment from "./routes/admin/edit-shipment";
 // import SellerCreateOrder from "./routes/seller/seller-create-order/seller-create-order.component";
 
 library.add(fas);
@@ -42,7 +44,24 @@ function App() {
           </ProtectedRoute>
         }
       />
-            <Route
+      <Route
+        path="/all-shipments"
+        element={
+          <ProtectedRoute>
+            <AllShipments />
+          </ProtectedRoute>
+        }
+      />
+
+      <Route
+        path="/shipments/*"
+        element={
+          <ProtectedRoute>
+            <EditShipment />
+          </ProtectedRoute>
+        }
+      />
+      <Route
         path="/create-account"
         element={
           <ProtectedRoute>
@@ -91,7 +110,6 @@ function App() {
           </ProtectedRoute>
         }
       />
-
     </Routes>
   );
 }
